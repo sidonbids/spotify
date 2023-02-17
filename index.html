@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button:hover, button:active, button:focus {
+            border: 1px solid black !important;
+            cursor:pointer;
+        }
+        .active {
+          border-color: 1px solid wheat;
+        }
+        .selected{
+            border: 1px solid wheat !important;
+        }
+        #audio-player {
+            position: absolute;
+            height: 100px;
+            width: 300px;
+            top: 140px;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+            -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+            -moz-user-select: none;    /* mozilla browsers */
+            -khtml-user-select: none;  /* webkit (konqueror) browsers */
+            -ms-user-select: none;     /* IE10+ */
+        }
+
+        .icons{
+            margin-top: 14px; 
+        }
+        .icons i{
+            cursor: pointer;
+        }
+
+        #myProgressBar{
+            top:3px;
+            width: 280px;
+            height: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb{
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            background: #04AA6D; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+
+        }
+
+        .timestamp{
+            margin: 0 23px;
+        }
+
+        .timestamp i{
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <img id="output" src="img/1.png" style="position: relative;">
+        <div id="audio-player">
+            <input type="range" name="range" id="myProgressBar" class="slider" min="0" value="0" max="100">
+            <div class="icons">
+                <!-- fontawesome icons -->
+                <i class="fas fa-3x fa-step-backward" id="previous"></i>
+                <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+                <i class="fas fa-3x fa-step-forward" id="next"></i> 
+            </div>
+        </div>
+        <button id="opt1" ></button>
+        <button id="opt2"></button>
+        <button id="opt3" ></button>
+        <button id="nxt" ></button>
+        <button id="prev" style="display:none !important; border:none;"></button>
+        <button id="home" style="display:none !important; border:none;"></button>
+        <button id="loc" style="display:none !important; border:none;"></button>
+    </img>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
+</body>
+</html>
